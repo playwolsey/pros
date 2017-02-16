@@ -77,24 +77,17 @@
 export default {
     data() {
         return {
-            keyword: '',
-            books: []
+            works: []
         }
     },
-    methods: {
-        searchBook() {
-            if (this.keyword.length === 0) {
-                return;
-            }
-
-            this.$http.jsonp('https://api.douban.com/v2/book/search?count=10&q=' + this.keyword, {}, {
-                emulateJSON: true
-            }).then(function(response) {
-                this.books = response.data.books
-            }, function(response) {
-                console.log(response)
-            });
-        }
+    mounted() {
+        this.$http.jsonp('/res/data/works.json', {}, {
+            emulateJSON: true
+        }).then(function(response) {
+            this.works = response.data.works
+        }, function(response) {
+            console.log(response)
+        });
     }
 }
 </script>
