@@ -1,32 +1,76 @@
 <style>
-.search-wrap {width:660px;margin:80px auto 0;}
-.search-input {width:514px;border:1px solid #d3d3d3;border-radius:3px;height:42px;line-height:42px;padding:0 8px;}
-.search-btn { height:44px;width:113px;text-align:center;font-size:16px;background-color:#555;color:#fff;border:none;border-radius:3px;margin-left:15px;cursor:pointer;}
+.work-item {float:left;width:255px;margin-right:20px;position:relative;}
+.work-item:nth-child(4n) {margin-right:0;}
+.work-item img {width:255px;height:100%;min-height:30px;}
+.work-item .work-item-cover {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: background .5s ease;
+    -moz-transition: background .5s ease;
+    -o-transition: background .5s ease;
+    transition: background .5s ease;
+    line-height: 1;
+    color: #FFF;
+}
+.work-item a:hover .work-item-cover {opacity:1;filter:alpha(opacity=1);}
+.work-item .work-item-cover .desc {position:absolute;left:20px;}
+.work-item .work-item-cover .hd {font-size:13px;bottom:56px;}
+.work-item .work-item-cover .bd {font-size:15px;bottom:38px;}
+.work-item .work-item-cover .ft {font-size:12px;bottom:18px;}
 </style>
 
 <template>
-    <div id="book">
-        <div class="search-wrap">
-            <input class="search-input" type="search" placeholder="搜索书名" v-model="keyword" @keyup.enter="searchBook">
-            <button class="search-btn" v-on:click="searchBook">搜索</button>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-item" v-for="book in books">
-                <div class="content">
-                    <a :href="book.alt" target="_blank"><img :src="book.images.medium" :alt="book.title"></a>
-                    <div class="info">
-                        <div class="mname">
-                            <span class="name-txt"><a :href="book.alt" target="_blank">{{book.title}}</span>
-                            <span class="rate">{{book.rating.average}}</span>
-                        </div>
-                        <div class="comment">{{book.summary}}</div>
-                        <div class="year">{{book.author[0]}}</div>
-                        <div class="price">&yen;{{book.price}}</div>
-                    </div>
+<div id="work">
+    <section class="work-wrap">
+        <div class="work-item">
+            <a href="/detail/1">
+                <img class="lazy" src="http://www.quanwends.com/uploads/160726/2-160H6113033C4.jpg" alt="FOURS">
+                <div class="work-item-cover">
+                    <div class="desc hd"><p>临平日料店</p></div>
+                    <div class="desc bd"><p>LINPING SAKATE LZAKAYA</p></div>
+                    <div class="desc ft"><p>2016 2016 Interior</p></div>
                 </div>
-            </div>
+            </a>
         </div>
-    </div>
+        <div class="work-item" >
+            <a href="/detail/2">
+                <img class="lazy" src="http://www.bobchen.cn/upfile/20161102/5819a19c7a5c9.jpg" alt="FOURS">
+                <div class="work-item-cover">
+                    <div class="desc hd"><p>临平日料店</p></div>
+                    <div class="desc bd"><p>LINPING SAKATE LZAKAYA</p></div>
+                    <div class="desc ft"><p>2016 2016 Interior</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="work-item" >
+            <a href="/detail/3">
+                <img class="lazy" src="http://www.bobchen.cn/upfile/20161206/584619ee26c32.jpg" alt="FOURS">
+                <div class="work-item-cover">
+                    <div class="desc hd"><p>临平日料店</p></div>
+                    <div class="desc bd"><p>LINPING SAKATE LZAKAYA</p></div>
+                    <div class="desc ft"><p>2016 2016 Interior</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="work-item" >
+            <a href="/detail/3">
+                <img class="lazy" src="http://www.bobchen.cn/upfile/20161102/5819a05905d5f.jpg" alt="FOURS">
+                <div class="work-item-cover">
+                    <div class="desc hd"><p>临平日料店</p></div>
+                    <div class="desc bd"><p>LINPING SAKATE LZAKAYA</p></div>
+                    <div class="desc ft"><p>2016 2016 Interior</p></div>
+                </div>
+            </a>
+        </div>
+    </section>
+</div>
 </template>
 
 <script>
