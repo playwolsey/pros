@@ -1,6 +1,6 @@
-{
-    title: "works",
-    total: 250,
+works({
+    "title": "works",
+    "total": 250,
     works: [
         {
             cover: "http://www.quanwends.com/uploads/160726/2-160H6113033C4.jpg",
@@ -30,4 +30,4 @@
             }
         }
     ]
-}
+});

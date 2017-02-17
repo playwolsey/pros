@@ -69,6 +69,26 @@
                 </div>
             </a>
         </div>
+        <div class="work-item" >
+            <a href="/detail/3">
+                <img class="lazy" src="http://www.bobchen.cn/upfile/20161102/5819a05905d5f.jpg" alt="FOURS">
+                <div class="work-item-cover">
+                    <div class="desc hd"><p>临平日料店</p></div>
+                    <div class="desc bd"><p>LINPING SAKATE LZAKAYA</p></div>
+                    <div class="desc ft"><p>2016 2016 Interior</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="work-item" v-for="work in works">
+            <a href="/detail/">
+                <img class="lazy" :src="work.cover" :alt="work.desc.name">
+                <div class="work-item-cover">
+                    <div class="desc hd"><p>{{work.desc.name}}</p></div>
+                    <div class="desc bd"><p>{{work.desc.ename}}</p></div>
+                    <div class="desc ft"><p>{{work.desc.tag}}</p></div>
+                </div>
+            </a>
+        </div>
     </section>
 </div>
 </template>
@@ -81,11 +101,14 @@ export default {
         }
     },
     mounted() {
-        this.$http.jsonp('/res/data/works.json', {}, {
+        this.$http.jsonp('/res/data/works.json', {
+            jsonp: "callback", 
+            jsonpCallback: "works"
+        }, {
             emulateJSON: true
-        }).then(function(response) {
+        }).then(response => {
             this.works = response.data.works
-        }, function(response) {
+        }, response => {
             console.log(response)
         });
     }

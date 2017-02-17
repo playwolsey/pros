@@ -48,6 +48,7 @@ export default {
         this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10', {}, {
             emulateJSON: true
         }).then(function(response) {
+            console.log(response);
             this.articles = response.data.subjects
         }, function(response) {
             console.log(response)
