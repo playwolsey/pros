@@ -91,13 +91,7 @@
         </div>
     </section>
     <waterfall :line-gap="200" :watch="works">
-        <waterfall-slot
-            v-for="(item, index) in items"
-            :width="item.width"
-            :height="item.height"
-            :order="index"
-            :key="item.id"
-            >
+        <waterfall-slot v-for="(item, index) in works" :width="item.width" :height="item.height" :order="index" :key="item.id">
         </waterfall-slot>
     </waterfall>
 </div>
