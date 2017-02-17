@@ -90,10 +90,23 @@
             </a>
         </div>
     </section>
+    <waterfall :line-gap="200" :watch="works">
+        <waterfall-slot
+            v-for="(item, index) in items"
+            :width="item.width"
+            :height="item.height"
+            :order="index"
+            :key="item.id"
+            >
+        </waterfall-slot>
+    </waterfall>
 </div>
 </template>
 
 <script>
+import Waterfall from 'vue-waterfall/lib/waterfall.vue'
+import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot.vue'
+
 export default {
     data() {
         return {
@@ -111,6 +124,10 @@ export default {
         }, response => {
             console.log(response)
         });
+    },
+    components: {
+        Waterfall,
+        WaterfallSlot
     }
 }
 </script>
