@@ -2,6 +2,7 @@
 <div id="job">
     <article class="m-article">
         <h5 class="m-title">室内设计师</h5>
+        <div class="m-line"></div>
         <section class="m-section">
             <p>你将负责：</p>
             <p>1. 参与到客户的接洽与方案汇报；</p>
@@ -20,6 +21,7 @@
     </article>
     <article class="m-article">
         <h5 class="m-title">室内设计师助理</h5>
+        <div class="m-line"></div>
         <section class="m-section">
             <p>你将负责：</p>
             <p>1. 协助主案设计师完成方案设计；</p>
@@ -33,6 +35,9 @@
             <p>2. 能熟练使用各种设计软件（CAD/3D/SU/PS）；</p>
             <p>3. 领悟力较强，执行力强，良好的学习能力，良好的团队合作精神。</p>
         </section>
+    </article>
+    <article class="m-artile" style="margin-top:30px;">
+        <h5 class="m-title">应聘简历及作品投件邮箱：804931655@qq.com,期待您的加入！</h5>
     </article>
 </div>
 </template>

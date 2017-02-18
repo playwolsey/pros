@@ -2,6 +2,7 @@
 <div id="contact">
     <article class="m-article">
         <h5 class="m-title">杭州全文室内设计</h5>
+        <div class="m-line"></div>
         <section class="m-section">
             <p>Building 7-105, Jundu Apsrtment,</p>
             <p>HouChao Road,</p>

@@ -18,7 +18,11 @@ table {border-collapse:collapse;border-spacing:0;}
 hr {border:none;height:1px;}
 html {overflow-y:scroll;}
 .view {width:1080px;margin:90px auto 0;}
+.m-article {margin-top:30px;}
 .m-title, .m-section {font-size:13px;line-height:20px;}
+.m-title {font-weight:bold;}
+.m-section {margin-top:20px;}
+.m-line {border-bottom: 2px solid #000;width:15px;margin-top:15px;}
 </style>
 
 <template>
