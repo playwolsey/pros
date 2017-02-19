@@ -77,6 +77,11 @@ export default {
             works: []
         }
     },
+    created() {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.replace = "/m/work";
+        }
+    },
     mounted() {
         this.$http.jsonp('/res/data/works.json', {
             jsonp: "callback", 

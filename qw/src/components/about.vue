@@ -1,11 +1,11 @@
 <style>
-.about-wrap {width:500px;float:left;}
+.about-wrap {width:500px;}
 .about-wrap:last-child {margin-left:79px;}
 </style>
 
 <template>
 <div id="about">
-    <div class="about-wrap">
+    <div class="article-wrap about-wrap">
         <article class="m-article">
             <h5 class="m-title">杭州全文室内设计</h5>
             <div class="m-line"></div>
@@ -28,7 +28,7 @@
         </article>
     </div>
 
-    <div class="about-wrap">
+    <div class="article-wrap about-wrap">
         <article class="m-article">
             <h5 class="m-title">QUANWEN DESIGN OFFICE</h5>
             <div class="m-line"></div>

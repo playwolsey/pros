@@ -12,6 +12,7 @@ import detail from './components/detail.vue'
 import contact from './components/contact.vue'
 import about from './components/about.vue'
 import job from './components/job.vue'
+import mwork from './components/m/work.vue'
 
 const router = new VueRouter({
     mode: 'history',
@@ -23,6 +24,7 @@ const router = new VueRouter({
         { path: '/about', component: about }, 
         { path: '/contact', component: contact }, 
         { path: '/job', component: job }, 
+        { path: '/m/work', component: mwork }, 
         { path: '*', component: work }
     ]
 })
