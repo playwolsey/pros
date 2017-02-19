@@ -37,11 +37,12 @@ import navbar from './components/navbar.vue'
 
 export default {
     name: 'app',
-    data () {
-        return {
+    created() {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location = "mobile.html";
         }
     },
-    components: {navbar}
+    components: { navbar }
 }
 </script>
 
