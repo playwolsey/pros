@@ -6,6 +6,7 @@
 .navbar .nav > li {float:left;}
 .navbar .nav > li > a {display:block;color:#969696;font-size:16px;line-height:24px;padding:0 15px;}
 .navbar .nav > li > a:hover {color:#000;}
+.navbar .nav > li > a.router-link-active {color:#000;}
 </style>
 
 <template>

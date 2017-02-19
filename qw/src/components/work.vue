@@ -40,14 +40,14 @@
             </a>
         </div>-->
         <div class="work-item" v-for="work in works">
-            <a href="/detail/">
+            <router-link :to="{path:'detail/work.id', query: {id:work.id}}">
                 <img class="lazy" :src="work.cover" :alt="work.desc.name">
                 <div class="work-item-cover">
                     <div class="desc hd"><p>{{work.desc.name}}</p></div>
                     <div class="desc bd"><p>{{work.desc.ename}}</p></div>
                     <div class="desc ft"><p>{{work.desc.tag}}</p></div>
                 </div>
-            </a>
+            </router-link>
         </div>
     </section>
     <!--<waterfall :line-gap="200" :watch="works">
