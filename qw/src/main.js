@@ -20,6 +20,9 @@ const router = new VueRouter({
     routes: [
         { path: '/', component: work }, 
         { path: '/work', component: work }, 
+        { path: '/interior', component: work }, 
+        { path: '/architecture', component: work }, 
+        { path: '/visual', component: work }, 
         { path: '/detail/:id', component: detail }, 
         { path: '/about', component: about }, 
         { path: '/contact', component: contact }, 
