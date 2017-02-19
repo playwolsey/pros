@@ -6,16 +6,10 @@
 .navbar .nav {list-style:none;float:right;}
 .navbar .nav > li {float:left;color:#969696;}
 .navbar .nav > li > a {font-size:16px;color:#969696;line-height:24px;padding:0 15px;}
-.navbar .nav > li > a:hover {color:#000;}
+.navbar .nav > li > a:hover {color:#000;font-weight:600;}
 .navbar .nav > li > a.router-link-active {color:#000;font-weight:600;}
 .navbar .nav .subnav {float:right;height:24px;overflow:hidden;position:relative;line-height:24px;width:0;}
-.navbar .subnav div a {
-    float:none;color:#969696;
-    padding-bottom: 10px;
-    -webkit-transition: none .5s ease;
-    -moz-transition: none .5s ease;
-    -o-transition: none .5s ease;
-    transition: none .5s ease;}
+.navbar .subnav div a {float:none;color:#969696;padding-bottom:10px;-webkit-transition:none .5s ease;-moz-transition:none .5s ease;-o-transition:none .5s ease;transition:none .5s ease;}
 </style>
 
 <template>
