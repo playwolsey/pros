@@ -1,11 +1,12 @@
 
 <template>
 <div id="mwork">
-    i am mwork
 </div>
 </template>
 
 <script>
+import flexible from '../../javascript/flexible.js'
+
 export default {
     data() {
         return {
@@ -13,9 +14,9 @@ export default {
         }
     },
     mounted() {
-        this.$http.jsonp('/res/data/works.json', {
+        this.$http.jsonp('/res/data/work.json', {
             jsonp: "callback", 
-            jsonpCallback: "works"
+            jsonpCallback: "work"
         }, {
             emulateJSON: true
         }).then(response => {

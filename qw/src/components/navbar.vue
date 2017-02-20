@@ -13,8 +13,8 @@
 .navbar .nav li a.router-link-active {color:#000;font-weight:600;}
 .navbar .nav .subnav {float:right;height:24px;overflow:hidden;position:relative;line-height:24px;}
 .navbar .subnav div a {float:none;color:#969696;padding:0 5px 10px;}
-.slide-fade-enter-active {transition:all .3s ease;}
-.slide-fade-leave-active {transition:all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);}
+.slide-fade-enter-active {transition:all .5s ease;}
+.slide-fade-leave-active {transition:all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);}
 .slide-fade-enter, .slide-fade-leave-active {transform:translateX(10px);opacity:0;}
 </style>
 
