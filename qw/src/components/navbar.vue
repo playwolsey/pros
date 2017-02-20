@@ -1,8 +1,11 @@
 <style>
 .navbar-wrap {height:90px;background:rgba(255,255,255,0.94);box-shadow:0px 6px 20px 0px rgba(0,0,0,0.12);position:fixed;z-index:99;left:0;top:0;right:0;}
 .navbar {height:24px;padding:30px 0;margin-bottom:10px;width:1080px;margin:0 auto;}
-.navbar h1 {float:left;height:24px;line-height:24px;font-weight:bold;font-size:16px;}
-.navbar h1 .navbar-brand {color:#000;letter-spacing:1.23px;}
+.navbar .navbar-brand {color:#000;letter-spacing:1.23px;float:left;height:24px;line-height:24px;font-weight:bold;font-size:16px;width:250px;position:relative;}
+.navbar .navbar-brand h1 {font-size:16px;position:absolute;}
+.navbar .navbar-brand .nav-brand-back {opacity:0;}
+.navbar .navbar-brand:hover .nav-brand-back {opacity:1;}
+.navbar .navbar-brand:hover .nav-brand-front {opacity:0;}
 .navbar .nav {list-style:none;float:right;}
 .navbar .nav li {float:left;color:#969696;}
 .navbar .nav li a {font-size:16px;color:#969696;line-height:24px;padding:0 15px;}
@@ -16,7 +19,10 @@
 <div id="navbar">
     <div class="navbar-wrap"> 
         <div class="navbar"> 
-            <h1><a href="/" class="navbar-brand" @mouseover="showCompany" @mouseleave="showOrigin">{{company}}</a></h1>
+            <a href="/" class="navbar-brand">
+                <h1 class="nav-brand-front">QUANWEN DESIGN OFFICE.</h1>
+                <h1 class="nav-brand-back">杭州全文室内设计</h1>
+            </a>
             <ul class="nav"> 
                 <li>
                     <router-link to="/work"><span class="nav-icon-text">WORK</span></router-link>
@@ -40,18 +46,7 @@
 <script>
 export default {
     name: 'navbar',
-    data () {
-        return {
-            company: 'QUANWEN DESIGN OFFICE.'
-        }
-    },
     methods: {
-        showCompany() {
-            this.company = '杭州全文室内设计';
-        },
-        showOrigin() {
-            this.company = 'QUANWEN DESIGN OFFICE.';
-        }
     }
 }
 </script>
