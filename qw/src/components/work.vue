@@ -71,18 +71,27 @@ export default {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             window.location = "/m/work";
         }
+
+        this.getWorks();
     },
-    mounted() {
-        this.$http.jsonp('/res/data/works.json', {
-            jsonp: "callback", 
-            jsonpCallback: "works"
-        }, {
-            emulateJSON: true
-        }).then(response => {
-            this.works = response.data.works
-        }, response => {
-            console.log(response)
-        });
+    watch: {
+        '$route': 'getWorks'
+    },
+    methods: {
+        getWorks() {
+            let path = this.$route.path.split('/')[1];
+
+            this.$http.jsonp('/res/data/' + path + '.json', {
+                jsonp: "callback", 
+                jsonpCallback: path 
+            }, {
+                emulateJSON: true
+            }).then(response => {
+                this.works = response.data.works
+            }, response => {
+                console.log(response)
+            });
+        }
     },
     components: {
         Waterfall,

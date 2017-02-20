@@ -24,6 +24,7 @@ html {overflow-y:scroll;}
 .m-title, .m-section {font-size:13px;line-height:20px;}
 .m-title {font-weight:bold;}
 .m-section {margin-top:20px;}
+.m-section p {font-family:Avenir, Helvetica, "Mircosoft Yahei";}
 .m-line {border-bottom: 2px solid #000;width:15px;margin-top:15px;}
 </style>
 
