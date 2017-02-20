@@ -4,7 +4,7 @@ work({
     "works": [
         {
             cover: "http://www.quanwends.com/uploads/160726/2-160H6113033C4.jpg",
-            id: 10001,
+            id: 'rld',
             desc: {
                 name: "临平日料店",
                 ename: "LINPING SAKATE LZAKAYA",
