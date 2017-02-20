@@ -32,34 +32,33 @@
 </template>
 
 <script>
-//export default {
-//    data() {
-//        return {
-//            works: []
-//        }
-//    },
-//    created() {
-//        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-//            window.location = "/m/detail";
-//        }
-//
-//        this.getDetails();
-//    },
-//    methods: {
-//        getDetails() {
-//            let path = this.$route.path.split('/')[1];
-//
-//            this.$http.jsonp('/res/data/' + path + '.json', {
-//                jsonp: "callback", 
-//                jsonpCallback: path 
-//            }, {
-//                emulateJSON: true
-//            }).then(response => {
-//                this.works = response.data.works
-//            }, response => {
-//                console.log(response)
-//            });
-//        }
-//    }
-//}
+export default {
+    data() {
+        return {
+            details: {}
+        }
+    },
+    created() {
+        let id = this.$route.path.split('/detail/')[1];
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location = "/m/detail/" + id;
+        }
+
+        this.getDetails(id);
+    },
+    methods: {
+        getDetails(id) {
+            this.$http.jsonp('/res/data/' + id + '.json', {
+                jsonp: "callback", 
+                jsonpCallback: id 
+            }, {
+                emulateJSON: true
+            }).then(response => {
+                this.details = response.data
+            }, response => {
+                console.log(response)
+            });
+        }
+    }
+}
 </script>
