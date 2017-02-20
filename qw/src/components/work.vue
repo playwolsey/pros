@@ -29,16 +29,6 @@
 <template>
 <div id="work">
     <section class="work-wrap">
-        <!--<div class="work-item">
-            <a href="/detail/1">
-                <img class="lazy" src="http://www.quanwends.com/uploads/160726/2-160H6113033C4.jpg" alt="FOURS">
-                <div class="work-item-cover">
-                    <div class="desc hd"><p>临平日料店</p></div>
-                    <div class="desc bd"><p>LINPING SAKATE LZAKAYA</p></div>
-                    <div class="desc ft"><p>2016 2016 Interior</p></div>
-                </div>
-            </a>
-        </div>-->
         <div class="work-item" v-for="work in works">
             <router-link :to="{path:'detail/work.id', query: {id:work.id}}">
                 <img class="lazy" :src="work.cover" :alt="work.desc.name">
