@@ -23,7 +23,7 @@ const router = new VueRouter({
         { path: '/interior', component: work }, 
         { path: '/architecture', component: work }, 
         { path: '/visual', component: work }, 
-        { path: '/detail/:id', component: detail }, 
+        { path: '/detail/:id', name: 'detail', component: detail }, 
         { path: '/about', component: about }, 
         { path: '/contact', component: contact }, 
         { path: '/job', component: job }, 

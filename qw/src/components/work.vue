@@ -30,7 +30,7 @@
 <div id="work">
     <section class="work-wrap">
         <div class="work-item" v-for="work in works">
-            <router-link :to="{path:'detail/work.id', query: {id:work.id}}">
+            <router-link :to="{name:'detail', params: {id:work.id}}">
                 <img class="lazy" :src="work.cover" :alt="work.desc.name">
                 <div class="work-item-cover">
                     <div class="desc hd"><p>{{work.desc.name}}</p></div>
@@ -80,6 +80,7 @@ export default {
     methods: {
         getWorks() {
             let path = this.$route.path.split('/')[1];
+            path||(path="work");
 
             this.$http.jsonp('/res/data/' + path + '.json', {
                 jsonp: "callback", 
