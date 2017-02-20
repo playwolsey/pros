@@ -11,8 +11,11 @@
 .navbar .nav li a {font-size:16px;color:#969696;line-height:24px;padding:0 15px;}
 .navbar .nav li a:hover {color:#000;font-weight:600;}
 .navbar .nav li a.router-link-active {color:#000;font-weight:600;}
-.navbar .nav .subnav {float:right;height:24px;overflow:hidden;position:relative;line-height:24px;width:0;}
-.navbar .subnav div a {float:none;color:#969696;padding-bottom:10px;-webkit-transition:none .5s ease;-moz-transition:none .5s ease;-o-transition:none .5s ease;transition:none .5s ease;}
+.navbar .nav .subnav {float:right;height:24px;overflow:hidden;position:relative;line-height:24px;}
+.navbar .subnav div a {float:none;color:#969696;padding:0 5px 10px;}
+.slide-fade-enter-active {transition:all .3s ease;}
+.slide-fade-leave-active {transition:all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);}
+.slide-fade-enter, .slide-fade-leave-active {transform:translateX(10px);opacity:0;}
 </style>
 
 <template>
@@ -24,15 +27,17 @@
                 <h1 class="nav-brand-back">杭州全文室内设计</h1>
             </a>
             <ul class="nav"> 
-                <li>
+                <li @mouseover="show=true" @mouseleave="show=false">
                     <router-link to="/work"><span class="nav-icon-text">WORK</span></router-link>
-                    <div class="subnav">
-                        <div>
-                            <router-link to="/interior">Interior</router-link>
-                            <router-link to="/architecture">Architecture</router-link>
-                            <router-link to="/visual">Visual Design</router-link>
+                    <transition name="slide-fade">
+                        <div v-if="show" class="subnav">
+                            <div>
+                                <router-link to="/interior">Interior</router-link>
+                                <router-link to="/architecture">Architecture</router-link>
+                                <router-link to="/visual">Visual Design</router-link>
+                            </div>
                         </div>
-                    </div>
+                    </transition>
                 </li>  
                 <li><span>/</span><router-link to="/about"><span class="nav-icon-text">ABOUT</span></router-link><span>/</span></li>  
                 <li><router-link to="/contact"><span class="nav-icon-text">CONTACT</span></router-link><span>/</span></li>
@@ -46,7 +51,10 @@
 <script>
 export default {
     name: 'navbar',
-    methods: {
+    data() {
+        return {
+            show: false 
+        }
     }
 }
 </script>
