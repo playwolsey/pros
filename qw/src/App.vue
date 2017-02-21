@@ -15,12 +15,16 @@ html {overflow-y:scroll;}
 .view {width:1080px;margin:90px auto 0;}
 .view .article-wrap {float:left;}
 .view .m-article {margin-top:30px;}
-.view .m-title, .m-section {font-size:13px;line-height:20px;}
+.view .m-title, .view .m-section {font-size:13px;line-height:20px;}
 .view .m-title {font-weight:bold;}
 .view .m-section {margin-top:20px;}
-.view .m-section p {font-family:Avenir, Helvetica, "Mircosoft Yahei";}
+.view .m-section p, mview .m-section p {font-family:Avenir, Helvetica, "Mircosoft Yahei";}
 .view .m-line {border-bottom: 2px solid #000;width:15px;margin-top:15px;}
 .mview {width:14.4rem;margin:0.924rem auto 0;}
+.mview .m-article {margin-top:.75rem;}
+.mview .m-title, .mview .m-section {font-size:.4rem;line-height:1.125rem;}
+.mview .m-section {margin-top:.5rem;}
+.mview .m-line {border-bottom: 2px solid #000;width:.75rem;margin-top:.375rem;}
 </style>
 
 <template>
