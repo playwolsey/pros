@@ -20,13 +20,14 @@ html {overflow-y:scroll;}
 .view .m-section {margin-top:20px;}
 .view .m-section p {font-family:Avenir, Helvetica, "Mircosoft Yahei";}
 .view .m-line {border-bottom: 2px solid #000;width:15px;margin-top:15px;}
+.mview {width:14.4rem;margin:0.924rem auto 0;}
 </style>
 
 <template>
     <div id="app">
         <navbar v-show="!isMobile"></navbar>
         <mnavbar v-show="isMobile"></mnavbar>
-        <router-view :class="[isMobile ? mview : 'view']"></router-view>
+        <router-view :class="[isMobile ? 'mview' : 'view']"></router-view>
     </div>
 </template>
 

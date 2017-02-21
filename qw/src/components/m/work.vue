@@ -1,10 +1,14 @@
-<style></style>
+<style>
+.mwork-item {width:7rem;float:left;}
+.mwork-item:nth-child(2n-1) {margin-right:.4rem;}
+.mwork-item img {width:100%;}
+</style>
 
 <template>
 <div id="mwork">
     <div class="mwork-wrap">
         <div class="mwork-item" v-for="work in works">
-            <router-link :to="{name:'mdetail', params: {id:work.id}}"><img class="lazy" src="/upfile/20170220/58aa5fbb39ce0.jpg"></router-link>
+            <router-link :to="{name:'mdetail', params: {id:work.id}}"><img class="lazy" :src="work.cover" :alt="work.desc.name"></router-link>
         </div>
     </div>
 </div>
