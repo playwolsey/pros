@@ -33,6 +33,7 @@ const router = new VueRouter({
         { path: '/contact', component: contact }, 
         { path: '/job', component: job }, 
 
+        { path: '/m', component: mwork }, 
         { path: '/m/work', component: mwork }, 
         { path: '/m/detail/:id', name: 'mdetail', component: mdetail }, 
         { path: '/m/about', component: mabout }, 
