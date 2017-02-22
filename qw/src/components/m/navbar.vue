@@ -78,7 +78,11 @@ export default {
                 this.isDetail = false;
             }
 
-            if (path.indexOf('work') > -1) {
+            if (path.indexOf('work') > -1 
+                || path.indexOf('interior') > -1
+                || path.indexOf('architecture') > -1
+                || path.indexOf('visual') > -1
+                || path.indexOf('all') > -1) {
                 this.isWork = true;
             } else {
                 this.isWork = false;
