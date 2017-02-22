@@ -4,7 +4,7 @@
 .mnavbar-wrap .mnavbar .back {width:1.6rem;height:1.6rem;background:url(/res/img/back.png) no-repeat center center;background-size:100% 100%;margin:.7rem 0 .7rem;}
 .mnavbar-wrap .mnavbar .menu {font-size:.3375rem;position:absolute;right:10px;bottom:.33rem;}
 .mnavbar-wrap .mnavbar .menu span {width:.925rem;height:0.1125rem;background:#000;margin-bottom:.15rem;-webkit-transition:all 0.3s ease;-moz-transition:all 0.3s ease;transition:all 0.3s ease;display:block;}
-.mnavbar-wrap .menubox {font-size:1.35rem;line-height:1.35rem;margin-top:.3rem;}
+.mnavbar-wrap .menubox {font-size:1.35rem;line-height:1.35rem;margin-top:.5rem;}
 .mnavbar-wrap .menubox a {color:#DCDCDC;}
 .mnavbar-wrap .menubox a.router-link-active {color:#000;}
 .menubox-fade-enter-active {transition:all .5s cubic-bezier(0,0.5,0,1);}
@@ -31,18 +31,18 @@
         </div>
         <transition name="menubox-fade">
             <div class="menubox" v-if="show">
-                <ul>
+                <ul v-if="!isWork">
                     <li><router-link to="/m/work">Work</router-link></li>
                     <li><router-link to="/m/about">About</router-link></li>
                     <li><router-link to="/m/contact">Contact</router-link></li>
                     <li><router-link to="/m/job">Job</router-link></li>
                 </ul>
-                <!--<ul>
+                <ul v-if="isWork">
                     <li><router-link to="/m/interior">Interior</router-link></li>
                     <li><router-link to="/m/architecture">Architecture</router-link></li>
                     <li><router-link to="/m/visual">Visual Design</router-link></li>
                     <li><router-link to="/m/all">All</router-link></li>
-                </ul>-->
+                </ul>
             </div>
         </transition>
     </div>
@@ -57,6 +57,7 @@ export default {
             menuClass: 'menu',
             openClass: 'open',
             show: false,
+            isWork: false,
             isDetail: false
         }
     },
@@ -69,10 +70,18 @@ export default {
     methods: {
         getIsDetail() {
             let path = this.$route.path;
+
             if (path.indexOf('detail') > -1) {
                 this.isDetail = true;
+                this.show = false;
             } else {
                 this.isDetail = false;
+            }
+
+            if (path.indexOf('work') > -1) {
+                this.isWork = true;
+            } else {
+                this.isWork = false;
             }
         },
         back() {
