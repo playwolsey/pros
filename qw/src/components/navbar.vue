@@ -1,5 +1,6 @@
 <style>
-.navbar-wrap {height:90px;background:rgba(255,255,255,0.94);box-shadow:0px 6px 20px 0px rgba(0,0,0,0.12);position:fixed;z-index:99;left:0;top:0;right:0;}
+.navbar-wrap {height:80px;background:rgba(255,255,255,0.94);box-shadow:0px 6px 20px 0px rgba(0,0,0,0.12);position:fixed;z-index:99;left:0;top:0;right:0;}
+.navbar-wrap.no-shadow {box-shadow:0 0 0 0;}
 .navbar {height:24px;padding:30px 0;margin-bottom:10px;width:1080px;margin:0 auto;}
 .navbar .navbar-brand {color:#000;letter-spacing:1.23px;float:left;height:24px;line-height:24px;font-weight:bold;font-size:16px;width:252px;position:relative;}
 .navbar .navbar-brand h1 {font-size:16px;position:absolute;}
@@ -9,6 +10,7 @@
 .navbar .nav {list-style:none;float:right;}
 .navbar .nav li {float:left;color:#969696;}
 .navbar .nav li a {font-size:16px;color:#969696;line-height:24px;padding:0 15px;}
+.navbar .nav li:nth-child(4) a {padding-right:0;}
 .navbar .nav li a:hover {color:#000;font-weight:600;}
 .navbar .nav li a.router-link-active {color:#000;font-weight:600;}
 .navbar .nav .subnav {float:right;height:24px;overflow:hidden;position:relative;line-height:24px;}
@@ -22,7 +24,7 @@
 
 <template>
 <div id="navbar">
-    <div class="navbar-wrap"> 
+    <div :class="[isWork ? noShadowClass : '', wrapClass]"> 
         <div class="navbar"> 
             <a href="/" class="navbar-brand">
                 <h1 class="nav-brand-front">QUANWEN DESIGN OFFICE.</h1>
@@ -55,7 +57,28 @@ export default {
     name: 'navbar',
     data() {
         return {
-            show: false 
+            wrapClass: 'navbar-wrap',
+            noShadowClass: 'no-shadow',
+            show: false,
+            isWork: true
+        }
+    },
+    created() {
+        this.getIsWork();
+    },
+    watch: {
+        '$route': 'getIsWork'
+    },
+    methods: {
+        getIsWork() {
+            let path = this.$route.path.split('/')[1];
+            path || (path = 'work');
+
+            if (path === 'work' || path === 'interior' || path === 'architecture' || path === 'visual') {
+                this.isWork = true;
+            } else {
+                this.isWork = false;
+            }
         }
     }
 }
