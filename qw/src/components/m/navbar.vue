@@ -19,15 +19,15 @@
 <div id="mnavbar">
     <div class="mnavbar-wrap">
         <div class="mnavbar"> 
-            <div v-if="!isDetail">
-                <h1>QUANWEN<br>DESIGN<br>OFFICE.</h1>
-                <div :class="[show ? openClass : '', menuClass]" @click="show=!show">
+            <div>
+                <h1 v-if="!isDetail&&!isWork">QUANWEN<br>DESIGN<br>OFFICE.</h1>
+                <div v-if="!isDetail" :class="[show ? openClass : '', menuClass]" @click="show=!show">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-            <div class="back" v-if="isDetail" @click="back"></div>
+            <div class="back" v-if="isDetail||isWork" @click="back"></div>
         </div>
         <transition name="menubox-fade">
             <div class="menubox" v-if="show">
