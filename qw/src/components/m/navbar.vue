@@ -2,17 +2,17 @@
 .mnavbar-wrap {width:14.4rem;margin:0 auto;}
 .mnavbar-wrap .mnavbar {font-size:.9rem;line-height:1rem;letter-spacing:1px;padding:.36rem 0;position:relative;border-bottom:8px solid #000000;}
 .mnavbar-wrap .mnavbar .back {width:1.6rem;height:1.6rem;background:url(/res/img/back.png) no-repeat center center;background-size:100% 100%;margin:.7rem 0 .7rem;}
-.mnavbar-wrap .mnavbar .menu {font-size:.3375rem;position:absolute;right:10px;bottom:.33rem;}
-.mnavbar-wrap .mnavbar .menu span {width:.925rem;height:0.1125rem;background:#000;margin-bottom:.15rem;-webkit-transition:all 0.3s ease;-moz-transition:all 0.3s ease;transition:all 0.3s ease;display:block;}
+.mnavbar-wrap .mnavbar .menu {font-size:.3375rem;position:absolute;right:0;bottom:.33rem;}
+.mnavbar-wrap .mnavbar .menu span {width:.925rem;height:0.1125rem;background:#000;margin-bottom:.196rem;-webkit-transition:all 0.3s ease;-moz-transition:all 0.3s ease;transition:all 0.3s ease;display:block;}
 .mnavbar-wrap .menubox {font-size:1.35rem;line-height:1.35rem;margin-top:.5rem;}
 .mnavbar-wrap .menubox a {color:#DCDCDC;}
 .mnavbar-wrap .menubox a.router-link-active {color:#000;}
 .menubox-fade-enter-active {transition:all .5s cubic-bezier(0,0.5,0,1);}
 .menubox-fade-leave-active {transition:all .5s cubic-bezier(0, 0, 5, 0, 1);}
 .menubox-fade-enter, .slide-fade-leave-active {transform:translateY(-100px);opacity:0;}
-.menu.open span:nth-child(1) {-webkit-transform:rotate(38deg);transform:rotate(38deg);-webkit-transform-origin:left top;transform-origin:left top;}
+.menu.open span:nth-child(1) {-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-transform-origin:left top;transform-origin:left top;}
 .menu.open span:nth-child(2) {opacity:0;}
-.menu.open span:nth-child(3) {-webkit-transform:rotate(-38deg);transform: rotate(-38deg);-webkit-transform-origin:left bottom;transform-origin:left bottom;}
+.menu.open span:nth-child(3) {-webkit-transform:rotate(-45deg);transform: rotate(-45deg);-webkit-transform-origin:left bottom;transform-origin:left bottom;}
 </style>
 
 <template>
