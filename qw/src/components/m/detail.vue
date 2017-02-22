@@ -1,13 +1,18 @@
 <style>
-.detail-article-wrap .m-section {width:500px;}
-.detail-article-wrap p {font-weight:600;}
-.detail-img-wrap {margin-top:30px;}
-.detail-img-wrap img {width:700px;margin:10px 0;}
+.mdetail-wrap p {font-weight:600;}
+.mdetail-wrap .detail-img-wrap li {margin-bottom:.25rem;}
+.mdetail-wrap .detail-img-wrap li img {width:100%;}
+.mdetail-wrap .denav  {position:relative;margin:1rem 0;height:1.4rem;}
+.mdetail-wrap .denav a {display:inline-block;font-family:Avenir, "Microsoft Yahei";font-weight:600;font-size:.7rem;color:#000;letter-spacing:1.3px;position:absolute;}
+.mdetail-wrap .denav .back {width:.98rem;height:.7rem;background:url(/res/img/arrow.png) no-repeat center center;background-size:100% 100%;left:0}
+.mdetail-wrap .denav .home {left:50%;margin-left:-1.3rem;}
+.mdetail-wrap .denav .top {right:0;}
+.mdetail-wrap .copyright {font-size:.45rem;color:#000;border-top:1px solid #DCDCDC;padding:.6rem 0 .8rem;}
 </style>
 
 <template>
 <div id="detail">
-    <div class="article-wrap detail-article-wrap">
+    <div class="mdetail-wrap">
         <article class="m-article">
             <h5 class="m-title">{{details.name}}</h5>
             <h5 class="m-title">{{details.ename}}</h5>
@@ -23,6 +28,14 @@
                 <li v-for="img in details.imgs"><img :src="img"></li>
             </ul>
         </article>
+
+        <div class="denav">
+            <a class="back" href="javascript:void(0);" @click="back"></a>
+            <router-link class="home" to="/m">HOME</router-link>
+            <a class="top" href="javascript:void(0);" @click="scrollToTop">TOP</a>
+        </div>
+
+        <div class="copyright">Copyrights of Hangzhou Quanwen Interior Design Co.,Ltd.</div>
     </div>
 </div>
 </template>
@@ -36,11 +49,6 @@ export default {
     },
     created() {
         let id = this.$route.path.split('/detail/')[1];
-
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            window.location = "/m/detail/" + id;
-        }
-
         this.getDetails(id);
     },
     methods: {
@@ -55,6 +63,20 @@ export default {
             }, response => {
                 console.log(response)
             });
+        },
+        back() {
+            this.$router.go(-1);
+        },
+        scrollToTop() {
+            let scrollStep = -window.scrollY / (800 / 15),
+
+            scrollInterval = setInterval(function() {
+                if (window.scrollY != 0) {
+                    window.scrollBy(0, scrollStep);
+                } else {
+                    clearInterval(scrollInterval); 
+                }
+            }, 15);
         }
     }
 }
