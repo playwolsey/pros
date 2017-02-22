@@ -35,6 +35,10 @@ const router = new VueRouter({
 
         { path: '/m', component: mwork }, 
         { path: '/m/work', component: mwork }, 
+        { path: '/m/interior', component: work }, 
+        { path: '/m/architecture', component: work }, 
+        { path: '/m/visual', component: work }, 
+        { path: '/m/all', component: work }, 
         { path: '/m/detail/:id', name: 'mdetail', component: mdetail }, 
         { path: '/m/about', component: mabout }, 
         { path: '/m/contact', component: mcontact }, 
