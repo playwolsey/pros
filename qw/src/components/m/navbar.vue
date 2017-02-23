@@ -78,18 +78,23 @@ export default {
                 this.isDetail = false;
             }
 
-            if (path.indexOf('work') > -1 
-                || path.indexOf('interior') > -1
-                || path.indexOf('architecture') > -1
-                || path.indexOf('visual') > -1
-                || path.indexOf('all') > -1) {
+            if (path.indexOf('work') > -1 || path.indexOf('interior') > -1 || path.indexOf('architecture') > -1 || path.indexOf('visual') > -1 || path.indexOf('all') > -1) {
                 this.isWork = true;
             } else {
                 this.isWork = false;
             }
         },
         back() {
-            this.$router.go(-1);
+            let path = this.$route.path;
+
+            if (path.indexOf('detail') > -1) {
+                this.$router.go(-1);
+                this.show = true;
+            }
+
+            if (path.indexOf('work') > -1 || path.indexOf('interior') > -1 || path.indexOf('architecture') > -1 || path.indexOf('visual') > -1 || path.indexOf('all') > -1) {
+                this.$router.push({path: '/m'});
+            }
         }
     }
 }
