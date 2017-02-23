@@ -12,7 +12,7 @@
 
 <template>
 <div id="work">
-    <section class="work-wrap">
+    <!--<section class="work-wrap">
         <div class="work-item" v-for="work in works">
             <router-link :to="{name:'detail', params: {id:work.id}}">
                 <img class="lazy" :src="work.cover" :alt="work.desc.name">
@@ -23,21 +23,19 @@
                 </div>
             </router-link>
         </div>
-    </section>
-    <!--<waterfall :line-gap="200" :watch="works">
-        <waterfall-slot v-for="(item, index) in works" :width="255" :height="100" :order="index" :key="item.id">
-            <div class="work-item" >
-                <a href="/detail/3">
-                    <img class="lazy" src="http://www.bobchen.cn/upfile/20161102/5819a05905d5f.jpg" alt="FOURS">
-                    <div class="work-item-cover">
-                        <div class="desc hd"><p>临平日料店</p></div>
-                        <div class="desc bd"><p>LINPING SAKATE LZAKAYA</p></div>
-                        <div class="desc ft"><p>2016 2016 Interior</p></div>
-                    </div>
-                </a>
-            </div>
+    </section>-->
+    <waterfall :line-gap="200" :watch="works" class="work-wrap">
+        <waterfall-slot v-for="(work, index) in works" :width="255" :height="200" :order="index" :key="work.id" class="work-item">
+            <router-link :to="{name:'detail', params: {id:work.id}}">
+                <img class="lazy" :src="work.cover" :alt="work.desc.name">
+                <div class="work-item-cover">
+                    <div class="desc hd"><p>{{work.desc.name}}</p></div>
+                    <div class="desc bd"><p>{{work.desc.ename}}</p></div>
+                    <div class="desc ft"><p>{{work.desc.tag}}</p></div>
+                </div>
+            </router-link>
         </waterfall-slot>
-        </waterfall>-->
+    </waterfall>
 </div>
 </template>
 
