@@ -21,18 +21,31 @@ export default {
             works: []
         }
     },
-    mounted() {
-        this.$http.jsonp('/res/data/work.json', {
-            jsonp: "callback", 
-            jsonpCallback: "work"
-        }, {
-            emulateJSON: true
-        }).then(response => {
-            console.log(response)
-            this.works = response.data.works
-        }, response => {
-            console.log(response)
-        })
+    watch: {
+        '$route': 'getWorks'
+    },
+    created() {
+        this.getWorks();
+    },
+    methods: {
+        getWorks() {
+            let path = this.$route.path.split('/m/')[1];
+
+            if (!path || path === 'all') {
+                path = "work";
+            }
+
+            this.$http.jsonp('/res/data/' + path + '.json', {
+                jsonp: "callback", 
+                jsonpCallback: path 
+            }, {
+                emulateJSON: true
+            }).then(response => {
+                this.works = response.data.works
+            }, response => {
+                console.log(response)
+            });
+        }
     }
 }
 </script>
