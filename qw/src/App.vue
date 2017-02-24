@@ -20,7 +20,7 @@ html {overflow-y:scroll;}
 .view .m-section {margin-top:20px;}
 .view .m-section p, mview .m-section p {font-family:Avenir, Helvetica, "Mircosoft Yahei";}
 .view .m-line {border-bottom: 1.5px solid #000;width:15px;margin-top:15px;}
-.mview {width:14.4rem;margin:0.8rem auto 0;}
+.mview {width:14.2rem;margin:.8rem auto 0;}
 .mview .m-article {margin-top:.75rem;}
 .mview .m-title, .mview .m-section {font-size:.3rem;line-height:1.125rem;}
 .mview .m-section {margin-top:.5rem;}
