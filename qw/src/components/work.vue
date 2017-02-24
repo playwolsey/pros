@@ -1,5 +1,5 @@
 <style>
-.work-item {float:left;width:255px;margin-right:20px;position:relative;}
+.work-item {width:255px;position:relative;margin:0 auto;}
 .work-item:nth-child(4n) {margin-right:0;}
 .work-item img {width:255px;height:100%;min-height:30px;}
 .work-item .work-item-cover {width:100%;height:100%;background:linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, #000000 100%);position:absolute;top:0;left:0;color:#fff;opacity:0;filter:alpha(opacity=0);-webkit-transition:background .5s ease;transition:background .5s ease;line-height:1;color:#FFF;}
@@ -12,20 +12,8 @@
 
 <template>
 <div id="work">
-    <!--<section class="work-wrap">
-        <div class="work-item" v-for="work in works">
-            <router-link :to="{name:'detail', params: {id:work.id}}">
-                <img class="lazy" :src="work.cover" :alt="work.desc.name">
-                <div class="work-item-cover">
-                    <div class="desc hd"><p>{{work.desc.name}}</p></div>
-                    <div class="desc bd"><p>{{work.desc.ename}}</p></div>
-                    <div class="desc ft"><p>{{work.desc.tag}}</p></div>
-                </div>
-            </router-link>
-        </div>
-    </section>-->
     <waterfall :line-gap="270" :align="center" :watch="works" class="work-wrap">
-        <waterfall-slot v-for="(work, index) in works" :width="255" :height="200" :order="index" :key="work.id">
+        <waterfall-slot v-for="(work, index) in works" :width="work.width" :height="work.height" :order="index" :key="work.id">
             <div class="work-item">
                 <router-link :to="{name:'detail', params: {id:work.id}}">
                     <img class="lazy" :src="work.cover" :alt="work.desc.name">

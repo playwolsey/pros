@@ -5,6 +5,8 @@ work({
         {
             cover: "http://www.quanwends.com/uploads/160726/2-160H6113033C4.jpg",
             id: 'rld',
+            width: 1600,
+            height: 1066,
             desc: {
                 name: "临平日料店",
                 ename: "LINPING SAKATE LZAKAYA",
@@ -14,6 +16,8 @@ work({
         {
             cover: "http://www.bobchen.cn/upfile/20161102/5819a19c7a5c9.jpg",
             id: 10002,
+            width: 640,
+            height: 640,
             desc: {
                 name: '临平日料店',
                 ename: 'LINPING SAKATE LZAKAYA',
@@ -23,6 +27,8 @@ work({
         {
             cover: "http://www.bobchen.cn/upfile/20161206/584619ee26c32.jpg",
             id: 10003,
+            width: 840,
+            height: 560,
             desc: {
                 name: '临平日料店',
                 ename: 'LINPING SAKATE LZAKAYA',
@@ -32,6 +38,8 @@ work({
         {
             cover: "http://www.bobchen.cn/upfile/20161102/5819a05905d5f.jpg",
             id: 100043,
+            width: 560,
+            height: 840,
             desc: {
                 name: "临平日料店",
                 ename: "LINPING SAKATE LZAKAYA",
@@ -41,6 +49,8 @@ work({
         {
             cover: "http://www.bobchen.cn/upfile/20161102/5819a05905d5f.jpg",
             id: 100043,
+            width: 560,
+            height: 840,
             desc: {
                 name: "临平日料店",
                 ename: "LINPING SAKATE LZAKAYA",
@@ -50,6 +60,8 @@ work({
         {
             cover: "http://www.bobchen.cn/upfile/20161102/5819a19c7a5c9.jpg",
             id: 10002,
+            width: 640,
+            height: 640,
             desc: {
                 name: '临平日料店',
                 ename: 'LINPING SAKATE LZAKAYA',
@@ -59,6 +71,8 @@ work({
         {
             cover: "http://www.bobchen.cn/upfile/20161206/584619ee26c32.jpg",
             id: 10003,
+            width: 840,
+            height: 560,
             desc: {
                 name: '临平日料店',
                 ename: 'LINPING SAKATE LZAKAYA',
@@ -68,6 +82,8 @@ work({
         {
             cover: "http://www.quanwends.com/uploads/160726/2-160H6113033C4.jpg",
             id: 'rld',
+            width: 1600,
+            height: 1066,
             desc: {
                 name: "临平日料店",
                 ename: "LINPING SAKATE LZAKAYA",
