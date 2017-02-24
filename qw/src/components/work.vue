@@ -67,9 +67,6 @@ export default {
             });
         }
     },
-    components: {
-        Waterfall,
-        WaterfallSlot
-    }
+    components: { Waterfall, WaterfallSlot }
 }
 </script>
