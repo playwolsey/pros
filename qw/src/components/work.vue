@@ -13,7 +13,7 @@
 
 <template>
 <div id="work">
-    <waterfall :line="line" :line-gap="270" :watch="works">
+    <waterfall :line-gap="270" :watch="works">
         <waterfall-slot v-for="(work, index) in works" :width="work.width" :height="work.height" :order="index" :key="work.id">
             <div class="work-item">
                 <router-link :to="{name:'detail', params: {id:work.id}}">

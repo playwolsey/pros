@@ -1,11 +1,11 @@
 <style>
-.mwork-item {width:7rem;position:absolute;top:2px;bottom:2px;left:2px;right:2px;}
+.mwork-item {width:7rem;position:absolute;top:.05rem;bottom:.05rem;left:.05rem;right:.05rem;}
 .mwork-item img {width:100%;}
 </style>
 
 <template>
 <div id="mwork">
-    <waterfall :line="line" :line-gap="288" :watch="works">
+    <waterfall :line-gap="gap" :watch="works">
         <waterfall-slot v-for="(work, index) in works" :width="work.width" :height="work.height" :order="index" :key="work.id">
             <div class="mwork-item">
                 <router-link :to="{name:'mdetail', params: {id:work.id}}"><img class="lazy" :src="work.cover" :alt="work.desc.name"></router-link>
@@ -22,7 +22,8 @@ import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot.vue'
 export default {
     data() {
         return {
-            works: []
+            works: [],
+            gap: 288 
         }
     },
     watch: {
@@ -30,6 +31,7 @@ export default {
     },
     created() {
         this.getWorks();
+        this.getGap();
     },
     methods: {
         getWorks() {
@@ -49,6 +51,9 @@ export default {
             }, response => {
                 console.log(response)
             });
+        },
+        getGap() {
+            this.gap = 7.2 *(+window.document.documentElement.style.fontSize.split('px')[0]);
         }
     },
     components: { Waterfall, WaterfallSlot }
