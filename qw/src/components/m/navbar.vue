@@ -1,5 +1,5 @@
 <style>
-.mnavbar-wrap {width:14.4rem;margin:0 auto;}
+.mnavbar-wrap {width:14.2rem;margin:0 auto;}
 .mnavbar-wrap .mnavbar {font-size:.9rem;line-height:1rem;letter-spacing:1px;padding:.36rem 0;position:relative;border-bottom:8px solid #000000;}
 .mnavbar-wrap .mnavbar .back {width:1.6rem;height:1.6rem;background:url(/res/img/back.png) no-repeat center center;background-size:100% 100%;margin:.7rem 0 .7rem;}
 .mnavbar-wrap .mnavbar .menu {font-size:.3375rem;position:absolute;right:0;bottom:.33rem;}

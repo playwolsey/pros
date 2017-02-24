@@ -1,5 +1,6 @@
 <style>
-.mwork-item {width:7rem;position:absolute;top:.05rem;bottom:.05rem;left:.05rem;right:.05rem;}
+#mwork {width:14.4rem;}
+.mwork-item {width:7rem;position:absolute;top:.05rem;bottom:.05rem;left:.1rem;right:.1rem;}
 .mwork-item img {width:100%;}
 </style>
 
