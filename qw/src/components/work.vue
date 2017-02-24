@@ -1,6 +1,6 @@
 <style>
-#work {width:1100px;}
-.work-item {width:255px;position:relative;margin:0 auto;}
+#work {width:1080px;}
+.work-item {position:absolute;top:7.5px;left:7.5px;bottom:7.5px;right:7.5px;}
 .work-item:nth-child(4n) {margin-right:0;}
 .work-item img {width:255px;height:100%;min-height:30px;}
 .work-item .work-item-cover {width:100%;height:100%;background:linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, #000000 100%);position:absolute;top:0;left:0;color:#fff;opacity:0;filter:alpha(opacity=0);-webkit-transition:background .5s ease;transition:background .5s ease;line-height:1;color:#FFF;}
@@ -13,7 +13,7 @@
 
 <template>
 <div id="work">
-    <waterfall :line-gap="275" :align="center" :watch="works" class="work-wrap">
+    <waterfall :line="line" :line-gap="270" :watch="works">
         <waterfall-slot v-for="(work, index) in works" :width="work.width" :height="work.height" :order="index" :key="work.id">
             <div class="work-item">
                 <router-link :to="{name:'detail', params: {id:work.id}}">

@@ -1,5 +1,5 @@
 <style>
-.about-wrap {width:500px;}
+.about-wrap {width:492px;}
 .about-wrap:last-child {margin-left:79px;}
 </style>
 

@@ -12,7 +12,7 @@ html {overflow-y:scroll;}
 [data-dpr="1"] body {font-size:12px;}
 [data-dpr="2"] body {font-size:24px;}
 [data-dpr="3"] body {font-size:36px;}
-.view {width:1080px;margin:90px auto 0;}
+.view {width:1065px;margin:90px auto 0;}
 .view .article-wrap {float:left;}
 .view .m-article {margin-top:30px;}
 .view .m-title, .view .m-section {font-size:13px;line-height:20px;}
