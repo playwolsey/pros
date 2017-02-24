@@ -1,4 +1,5 @@
 <style>
+#work {width:1100px;}
 .work-item {width:255px;position:relative;margin:0 auto;}
 .work-item:nth-child(4n) {margin-right:0;}
 .work-item img {width:255px;height:100%;min-height:30px;}
@@ -12,7 +13,7 @@
 
 <template>
 <div id="work">
-    <waterfall :line-gap="270" :align="center" :watch="works" class="work-wrap">
+    <waterfall :line-gap="275" :align="center" :watch="works" class="work-wrap">
         <waterfall-slot v-for="(work, index) in works" :width="work.width" :height="work.height" :order="index" :key="work.id">
             <div class="work-item">
                 <router-link :to="{name:'detail', params: {id:work.id}}">
