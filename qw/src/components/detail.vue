@@ -9,7 +9,7 @@
 div.swiper-button-next, div.swiper-button-prev {width:32px;height:32px;background-size:32px 32px;position:absolute;top:-20px;}
 div.swiper-button-next {background-image:url(/res/img/next.png);}
 div.swiper-button-prev {background-image:url(/res/img/back.png);}
-.swiper-slide-next + div, .swiper-slide-active {-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-ms-filter: grayscale(100%);-o-filter:grayscale(100%);filter:grayscale(100%);filter:gray;}
+.swiper-slide-next + div, .swiper-slide-active {-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:grayscale(100%);filter:gray;}
 </style>
 
 <template>
@@ -38,7 +38,7 @@ div.swiper-button-prev {background-image:url(/res/img/back.png);}
             <div class="swiper-button-next" slot="button-next"></div>
         </div>
     </div>
-    <!--<div class="copyright">Copyrights of Hangzhou Quanwen Interior Design Co.,Ltd.</div>-->
+    <!--<div class="copyright">Copyrights of Hangzhou Quanwen Interior Design C,Ltd.</div>-->
 </div>
 </template>
 
