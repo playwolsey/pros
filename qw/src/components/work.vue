@@ -42,8 +42,8 @@ export default {
     },
     created() {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            //window.location = "/m";
             this.$router.push({ path: 'm' })
+            return;
         }
 
         this.getWorks();
