@@ -20,7 +20,6 @@ import mabout from './components/m/about.vue'
 import mjob from './components/m/job.vue'
 
 const router = new VueRouter({
-    mode: 'history',
     base: __dirname,
     routes: [
         { path: '/', component: work }, 
