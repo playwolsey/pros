@@ -61,7 +61,7 @@ export default {
         let id = this.$route.path.split('/detail/')[1];
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            window.location = "/m/detail/" + id;
+            this.$router.push({ name: 'mdetail', params: { id: id }})
         }
 
         this.getDetails(id);

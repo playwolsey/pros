@@ -42,7 +42,8 @@ export default {
     },
     created() {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            window.location = "/m";
+            //window.location = "/m";
+            this.$router.push({ path: 'm' })
         }
 
         this.getWorks();
@@ -53,7 +54,7 @@ export default {
     methods: {
         getWorks() {
             let path = this.$route.path.split('/')[1];
-            path||(path="work");
+            path || (path = "work");
 
             this.$http.jsonp('/res/data/' + path + '.json', {
                 jsonp: "callback", 
