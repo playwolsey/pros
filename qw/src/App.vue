@@ -22,7 +22,7 @@ html {overflow-y:scroll;}
 .view .m-line {border-bottom: 1.5px solid #000;width:15px;margin-top:15px;}
 .mview {width:14.2rem;margin:.8rem auto 0;}
 .mview .m-article {margin-top:.75rem;}
-.mview .m-title, .mview .m-section {font-size:.3rem;line-height:1.125rem;}
+.mview .m-title, .mview .m-section {font-size:.5rem;line-height:1.125rem;}
 .mview .m-section {margin-top:.5rem;}
 .mview .m-line {border-bottom: 1.5px solid #000;width:.75rem;margin-top:.375rem;}
 </style>
