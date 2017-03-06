@@ -9,6 +9,7 @@
 .work-item .work-item-cover .hd {font-size:13px;bottom:56px;}
 .work-item .work-item-cover .bd {font-size:15px;bottom:38px;}
 .work-item .work-item-cover .ft {font-size:12px;bottom:18px;}
+.img[lazy=loading] {}
 </style>
 
 <template>
@@ -17,7 +18,7 @@
         <waterfall-slot v-for="(work, index) in works" :width="work.width" :height="work.height" :order="index" :key="work.id">
             <div class="work-item">
                 <router-link :to="{name:'detail', params: {id:work.id}}">
-                    <img class="lazy" :src="work.cover" :alt="work.desc.name">
+                    <img lazy="loading" :src="work.cover" :alt="work.desc.name">
                     <div class="work-item-cover">
                         <div class="desc hd"><p>{{work.desc.name}}</p></div>
                         <div class="desc bd"><p>{{work.desc.ename}}</p></div>
@@ -33,6 +34,13 @@
 <script>
 import Waterfall from 'vue-waterfall/lib/waterfall.vue'
 import WaterfallSlot from 'vue-waterfall/lib/waterfall-slot.vue'
+import Vue from 'vue'
+import VueLazyload from 'vue-lazyload'
+
+Vue.use(VueLazyload, {
+    attempt: 1,
+    listenEvents: [ 'scroll' ]
+})
 
 export default {
     data() {
