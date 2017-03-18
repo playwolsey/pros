@@ -9,7 +9,7 @@
     <waterfall :line-gap="gap" :watch="works">
         <waterfall-slot v-for="(work, index) in works" :width="work.width" :height="work.height" :order="index" :key="work.id">
             <div class="mwork-item">
-                <router-link :to="{name:'mdetail', params: {id:work.id}}"><img class="lazy" :src="work.cover" :alt="work.desc.name"></router-link>
+                <router-link :to="{name:'mdetail', params: {id:work.id}}"><img v-lazy="work.cover" :alt="work.desc.name"></router-link>
             </div>
         </waterfall-slot>
     </waterfall>
@@ -24,7 +24,8 @@ export default {
     data() {
         return {
             works: [],
-            gap: 288 
+            gap: 288,
+            complement: 'work'
         }
     },
     watch: {
@@ -42,6 +43,9 @@ export default {
                 path = "work";
             }
 
+            this.complement = path
+            this.$emit('updateHead')
+
             this.$http.jsonp('/res/data/' + path + '.json', {
                 jsonp: "callback", 
                 jsonpCallback: path 
@@ -57,6 +61,24 @@ export default {
             this.gap = 7.2 *(+window.document.documentElement.style.fontSize.split('px')[0]);
         }
     },
-    components: { Waterfall, WaterfallSlot }
+    components: { Waterfall, WaterfallSlot },
+    head: {
+        title() {
+            return {
+                inner: '全文室内设计有限公司',
+                complement: this.complement
+            }
+        },
+        meta() { 
+            return [
+                { name: 'keywords', content: 'quanwends,全文,全文设计,室内设计' },
+                { name: 'description', content: '全文室内设计有限公司' },
+                { name: 'apple-mobile-web-app-capable', content: 'yes' },
+                { name: 'apple-touch-fullscreen', content: 'yes' },
+                { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+                { name: 'format-detection', content: 'telephone=no,email=no,address=no' }
+            ]
+        }
+    }
 }
 </script>

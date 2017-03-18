@@ -25,7 +25,7 @@
                 <p v-for="desc in details.descs">{{desc}}</p>
             </section>
             <ul class="detail-img-wrap">
-                <li v-for="img in details.imgs"><img :src="img"></li>
+                <li v-for="img in details.imgs"><img v-lazy="img"></li>
             </ul>
         </article>
 
@@ -44,7 +44,12 @@
 export default {
     data() {
         return {
-            details: {}
+            details: {},
+            headConfig: {
+                complement: '',
+                description: '',
+                keywords: ''
+            }
         }
     },
     created() {
@@ -60,6 +65,10 @@ export default {
                 emulateJSON: true
             }).then(response => {
                 this.details = response.data
+                this.headConfig.complement = response.data.name
+                this.headConfig.keywords = response.data.meta.keywords
+                this.headConfig.description = response.data.meta.description
+                this.$emit('updateHead')
             }, response => {
                 console.log(response)
             });
@@ -77,6 +86,24 @@ export default {
                     clearInterval(scrollInterval); 
                 }
             }, 15);
+        }
+    },
+    head: {
+        title() {
+            return {
+                inner: '全文室内设计有限公司',
+                complement: this.headConfig.complement
+            }
+        },
+        meta() { 
+            return [
+                { name: 'keywords', content: this.headConfig.keywords },
+                { name: 'description', content: this.headConfig.description },
+                { name: 'apple-mobile-web-app-capable', content: 'yes' },
+                { name: 'apple-touch-fullscreen', content: 'yes' },
+                { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+                { name: 'format-detection', content: 'telephone=no,email=no,address=no' }
+            ]
         }
     }
 }

@@ -21,3 +21,16 @@
     </div>
 </div>
 </template>
+
+<script>
+export default {
+    head: {
+        title() {
+            return {
+                inner: '全文室内设计有限公司',
+                complement: '联系我们' 
+            }
+        }
+    }
+}
+</script>
