@@ -2,10 +2,18 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from "vue-router"
 import VueResource from 'vue-resource'
+import VueHead from 'vue-head'
+import VueLazyload from 'vue-lazyload'
+
+Vue.use(VueLazyload, {
+    attempt: 12,
+    listenEvents: ['scroll']
+})
 
 Vue.config.debug = true;
 Vue.use(VueRouter);
 Vue.use(VueResource);
+Vue.use(VueHead);
 
 import work from './components/work.vue'
 import detail from './components/detail.vue'
