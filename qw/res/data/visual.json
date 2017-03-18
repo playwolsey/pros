@@ -1,38 +1,38 @@
 visual({
-    "title": "works",
-    "total": 250,
+    "title": "visual",
+    "total": 3,
     "works": [
         {
-            cover: "http://www.bobchen.cn/upfile/20161102/5819a19c7a5c9.jpg",
-            id: 10002,
-            width: 640,
-            height: 640,
+            cover: "/res/upload/modo/cover.jpg",
+            id: 'modo',
+            width: 588,
+            height: 392,
             desc: {
-                name: '临平日料店',
-                ename: 'LINPING SAKATE LZAKAYA',
-                tag: '2016 Interior'
+                name: '魔豆健身',
+                ename: 'MODOFITNESS GYM',
+                tag: '2016.09 Visual design'
             }
         },
-        {
-            cover: "http://www.bobchen.cn/upfile/20161206/584619ee26c32.jpg",
-            id: 10003,
-            width: 840,
-            height: 560,
+        { 
+            cover: "/res/upload/mq/cover.jpg",
+            id: 'mq',
+            width: 393,
+            height: 393,
             desc: {
-                name: '临平日料店',
-                ename: 'LINPING SAKATE LZAKAYA',
-                tag: '2016 Interior'
+                name: "MQ Lounge Bar 视觉设计",
+                ename: "MQ LOUNGE BAR VISUAL DESIGN",
+                tag: '2016.08 Visual design'
             }
         },
-        {
-            cover: "http://www.bobchen.cn/upfile/20161102/5819a05905d5f.jpg",
-            id: 100043,
-            width: 560,
-            height: 840,
+        { 
+            cover: "/res/upload/lake/cover.jpg",
+            id: 'lake',
+            width: 585,
+            height: 390,
             desc: {
-                name: "临平日料店",
-                ename: "LINPING SAKATE LZAKAYA",
-                tag: "2016 Interior"
+                name: "LAKE SIDE.湖179",
+                ename: "LAKE SIDE",
+                tag: '2016.08 Visual design'
             }
         }
     ]
